@@ -2,15 +2,20 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import Login from './components/Login.jsx'
 import { BrowserRouter as Router, Routes, Route } from "react-router";
+import { Provider } from "react-redux";
 import { Navigate } from "react-router";
-import Dashboard from "./components/Dashboard"
+import Dashboard from "./components/Dashboard";
+import appStore from "./utils/appStore";
+import Protected from "./components/Protected";
 
 createRoot(document.getElementById('root')).render(
-  <Router>
-    <Routes>
-      <Route path="/" element={<Navigate to="/login" replace />}></Route>
-      <Route path="/login" element={<Login />}></Route>
-      <Route path="/dashboard" element={<Dashboard />}></Route>
-    </Routes>
-  </Router>
+  <Provider store={appStore}>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Navigate to="/login" replace />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/dashboard" element={<Protected><Dashboard /></Protected>}></Route>
+      </Routes>
+    </Router>
+  </Provider>
 )

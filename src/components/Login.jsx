@@ -1,10 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import clm_api from "../utils/api";
 import { useNavigate } from "react-router";
-
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice";
 
 const Login = () => {
 
+    const dispatch = useDispatch();
     const [err, setErr] = useState(null);
 
     const email = useRef(null);
@@ -12,10 +14,10 @@ const Login = () => {
     const navigate = useNavigate();
 
     const handleLogin = async () => {
-        console.log(email.current.value);
         try {
             const res = await clm_api.post("/auth/login", { email: email.current.value, password: password.current.value });
             if (res?.data?.user) {
+                dispatch(addUser(res?.data?.user));
                 navigate("/dashboard");
             }
         } catch (error) {
