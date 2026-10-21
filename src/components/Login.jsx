@@ -8,6 +8,7 @@ const Login = () => {
 
     const dispatch = useDispatch();
     const [err, setErr] = useState(null);
+    const [showPassword, setShowPassword] = useState(false);
 
     const email = useRef(null);
     const password = useRef(null);
@@ -28,8 +29,9 @@ const Login = () => {
         <div className="login-page">
             <div>
                 <form className="login-form" onSubmit={(e) => e.preventDefault()}>
-                    <input className="login-email" placeholder="email" ref={email}></input>
-                    <input className="login-password" placeholder="password" ref={password}></input>
+                    <input type="email" className="login-email" placeholder="email" ref={email}></input>
+                    <input type={showPassword ? "text" : "password"} className="login-password" placeholder="password" ref={password}></input>
+                    <button className="toggle-password" onClick={() => setShowPassword(prev => !prev)}>{showPassword ? "hide" : "show"}</button>
                     {err && <p className="error-message">{err.message}</p>}
                     <button className="login-button" onClick={handleLogin}>login</button>
                 </form>
