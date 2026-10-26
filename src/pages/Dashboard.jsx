@@ -1,6 +1,6 @@
-import Header from "./Header";
-import SearchBar from "./SearchBar";
-import SideBar from "./SideBar";
+import Header from "../components/Header";
+import SearchBar from "../components/SearchBar";
+import SideBar from "../components/SideBar";
 import { useState } from "react";
 
 const Dashboard = () => {

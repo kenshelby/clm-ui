@@ -1,10 +1,10 @@
 import { createRoot } from 'react-dom/client'
-import './index.css'
-import Login from './components/Login.jsx'
 import { BrowserRouter as Router, Routes, Route } from "react-router";
 import { Provider } from "react-redux";
 import { Navigate } from "react-router";
-import Dashboard from "./components/Dashboard";
+import './index.css'
+import Login from './pages/Login.jsx';
+import Dashboard from "./pages/Dashboard";
 import appStore from "./utils/appStore";
 import Protected from "./components/Protected";
 
