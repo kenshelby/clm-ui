@@ -1,0 +1,1 @@
+export default hamburger_icon = "https://cdn-icons-png.flaticon.com/512/7710/7710488.png";
