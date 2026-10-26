@@ -1,6 +1,6 @@
-const SideBar = () => {
+const SideBar = ({ isOpen }) => {
     return (
-        <div className="sidebar-container">
+        <div className={`sidebar-container ${isOpen ? "open" : ""}`}>
             <ul className="sidebar-list">
                 <li className="list-items">Live</li>
                 <li className="list-items">Tenants</li>

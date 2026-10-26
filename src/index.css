@@ -98,6 +98,8 @@
         position: absolute;
         border: none;
         background: transparent;
+        right: 75px;
+        top: 206px;
     }
 }
 
@@ -110,7 +112,7 @@
 .header {
     display: flex;
     justify-content: space-between;
-    background-color: rgb(199, 163, 242);
+    background-color: rgb(217, 193, 246);
     height: 70px;
 }
 
@@ -122,11 +124,20 @@
     padding: 10px;
 }
 
-.header-logo {
-    padding: 10px;
-    margin: 5px;
-    height: 20px;
-    width: 20px;
+.menu-icon-container {
+    cursor: pointer;
+}
+
+.menu-icon-container:hover {
+    transform: scale(1.05);
+}
+
+.menu-icon {
+    width: 44px;
+    height: 34px;
+    padding: 2px;
+    margin-top: 15px;
+    margin-left: 8px;
 }
 
 .search-bar {
@@ -139,7 +150,7 @@
 .search-form {
     padding: 2px;
     width: 100%;
-    margin-left: 200px;
+    margin-left: 300px;
 }
 
 .search-input {
@@ -149,4 +160,45 @@
     border: 1px solid #a4a0a0;
     padding: 5px;
     margin: 10px;
+}
+
+.dasboard-body {
+    display: flex;
+    position: relative;
+}
+
+.sidebar-container {
+    position: absolute;
+    width: 12%;
+    height: calc(100vh - 70px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateX(-15px);
+    transition: opacity 400ms ease, transform 400ms ease, visibility 400ms ease;
+}
+
+.sidebar-container.open {
+    background-color: rgb(68, 66, 66);
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0px);
+    pointer-events: auto;
+}
+
+.sidebar-list {
+    list-style: none;
+    padding: 2px;
+    margin-top: 15px;
+}
+
+.list-items {
+    cursor: pointer;
+    margin: 6px 0px 0px 4px;
+    padding: 4px;
+    color: white;
+}
+
+.list-items:hover {
+    background-color: #94969c;
 }
