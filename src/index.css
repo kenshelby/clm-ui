@@ -197,8 +197,27 @@
     margin: 6px 0px 0px 4px;
     padding: 4px;
     color: white;
+    transition: opacity 400ms ease, transform 400ms ease, visibility 400ms ease;
 }
 
 .list-items:hover {
     background-color: #94969c;
+}
+
+.add-customer-container {
+    position: relative;
+    box-shadow: 2px 2px 4px gray;
+    padding: 5px;
+    margin: 5px;
+    height: 80vh;
+    width: 80vh;
+}
+
+.btn-close {
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 4px;
+    left: 375px;
+    margin: 2px 1px 5px 1px;
 }
