@@ -5,6 +5,7 @@ import { Navigate } from "react-router";
 import './index.css'
 import Login from './pages/Login.jsx';
 import Dashboard from "./pages/Dashboard";
+import Live from "./pages/Live";
 import appStore from "./utils/appStore";
 import Protected from "./components/Protected";
 
@@ -14,7 +15,9 @@ createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path="/" element={<Navigate to="/login" replace />}></Route>
         <Route path="/login" element={<Login />}></Route>
-        <Route path="/dashboard" element={<Protected><Dashboard /></Protected>}></Route>
+        <Route path="/dashboard" element={<Protected><Dashboard /></Protected>}>
+          <Route path="live" element={<Live />}></Route>
+        </Route>
       </Routes>
     </Router>
   </Provider>
