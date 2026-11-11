@@ -18,8 +18,8 @@ const Dashboard = () => {
             <div className="dasboard-body">
                 {menuClick && <SideBar isOpen={menuClick} />}
                 <SearchBar />
-                <Outlet />
             </div>
+            <Outlet />
         </div>
     )
 }
