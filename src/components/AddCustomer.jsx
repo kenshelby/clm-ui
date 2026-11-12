@@ -20,7 +20,7 @@ const AddCustomer = ({ close }) => {
 
         try {
 
-            const res = await clm_api.post("/live/addnewlive", { payload });
+            const res = await clm_api.post("/live/addnewlive", payload);
             alert(res.data.message);
             close(false);
 
@@ -34,8 +34,17 @@ const AddCustomer = ({ close }) => {
 
     return (
         <div className="add-customer-container">
-            <form className="add-customer-form" onSubmit={() => e.preventDefault()} >
-                <button type="button" className="btn-close" aria-label="Close" onClick={() => close(false)} >X</button><br />
+            <button type="button" className="btn-close" aria-label="Close" onClick={() => close(false)} >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-x preview-icon"><path d="M18 6 6 18" /><path d="m6 6 12 12" />
+                </svg>
+            </button>
+            <form className="add-customer-form" onSubmit={handleAddNewLive} >
 
                 <label htmlFor="name" >Name:</label>
                 <input ref={name} type="text" id="name" />
