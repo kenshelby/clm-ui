@@ -12,6 +12,8 @@ import Tenant from "./pages/Tenant";
 import Competitor from "./pages/Competitor";
 import WebExtractor from "./pages/WebExtractor";
 import APIExtractor from "./pages/APIExtractor";
+import Profile from "./pages/Profile";
+import Setting from "./pages/Setting";
 
 createRoot(document.getElementById('root')).render(
   <Provider store={appStore}>
@@ -25,6 +27,8 @@ createRoot(document.getElementById('root')).render(
           <Route path="competitor" element={<Competitor />}></Route>
           <Route path="webextractor" element={<WebExtractor />}></Route>
           <Route path="apiextractor" element={<APIExtractor />}></Route>
+          <Route path="profile" element={<Profile />}></Route>
+          <Route path="setting" element={<Setting />}></Route>
         </Route>
       </Routes>
     </Router>
