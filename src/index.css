@@ -119,14 +119,30 @@ body,
 
 .header {
     display: flex;
+    position: relative;
     justify-content: space-between;
-    background-color: rgb(217, 193, 246);
+    background-color: rgb(223, 208, 241);
     height: 70px;
 }
 
 .user-profile {
     padding: 10px;
 }
+
+.user-profile-icon {
+    position: absolute;
+    padding: 2px;
+    top: 12px;
+    right: 75px;
+}
+
+.user-profile-text {
+    position: absolute;
+    padding: 2px;
+    top: 15px;
+    right: 12px;
+}
+
 
 .header-message {
     padding: 10px;
@@ -187,8 +203,10 @@ body,
 }
 
 .sidebar-container.open {
-    background-color: rgb(68, 66, 66);
+    background-color: rgb(252, 248, 248);
     opacity: 1;
+    border: 1px solid #eaecf0;
+    border-radius: 2px;
     visibility: visible;
     transform: translateX(0px);
     pointer-events: auto;
@@ -200,12 +218,33 @@ body,
     margin-top: 15px;
 }
 
+.sidebar-list-lower {
+    position: relative;
+    margin-top: 420px;
+    padding: 2px;
+}
+
+.list-item-span-icon {
+    position: absolute;
+    padding: 2px;
+}
+
 .list-items {
     cursor: pointer;
     margin: 6px 0px 0px 4px;
     padding: 4px;
-    color: white;
+    color: rgb(24, 24, 24);
     transition: opacity 400ms ease, transform 400ms ease, visibility 400ms ease;
+}
+
+.sidebar-list a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.sidebar-list-lower a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .list-items:hover {
@@ -251,7 +290,7 @@ body,
     color: #101828;
 }
 
-.live-customer-button {
+.add-customer-button {
     position: fixed;
     right: 5px;
     background-color: #393a3c;
@@ -262,4 +301,30 @@ body,
     padding: 2px;
     width: 7%;
     height: 30px;
+}
+
+.tenant-container {
+    position: fixed;
+    right: 0;
+    background: #fff;
+    border: 1px solid #eaecf0;
+    border-radius: 12px;
+    width: calc(100vw - 180px);
+    height: calc(100vh - 150px);
+    overflow: hidden;
+    font-family: Inter, sans-serif;
+    color: #101828;
+}
+
+.profile-container {
+    position: fixed;
+    right: 0;
+    background: #fff;
+    border: 1px solid #eaecf0;
+    border-radius: 12px;
+    width: calc(100vw - 180px);
+    height: calc(100vh - 150px);
+    overflow: hidden;
+    font-family: Inter, sans-serif;
+    color: #101828;
 }
