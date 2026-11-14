@@ -24,7 +24,7 @@ const Live = () => {
     return (
         <div className="live-customers-container">
             <div className="customer-body">
-                <button className="live-customer-button" onClick={handleAddCustomer} >
+                <button className="add-customer-button" onClick={handleAddCustomer} >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24" height="24"
